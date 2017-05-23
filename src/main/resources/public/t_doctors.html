@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Лікарі</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/updated.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body ng-app = "OOPDarkfreeHospital">
+<nav class="navbar navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/"><div id="logo_container"><img id="logo" src="images/hospital-logo.png">Hospital</div></a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="t_examinations.html">Обстеження</a></li>
+            <li><a href="t_patients.html">Пацієнти</a></li>
+            <li><a class="active" href="t_doctors.html">Лікарі</a></li>
+            <li><a href="t_diagnosis.html">Діагнози</a></li>
+            <li><a href="t_med_labs.html">Лабораторії</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container" style="margin-top: 30px" ng-controller = "DoctorCtrl" >
+    <div class="row">
+        <div class="col-md12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Лікарі</div>
+                <div class="panel-body">
+
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+
+                            <th>ID</th>
+                            <th>Прізвище</th>
+                            <th>Ім'я</th>
+                            <th>По-батькові</th>
+                            <th>Професія</th>
+                            <th>Досвід</th>
+                            <th>Вартість обстеження</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr ng-repeat = "item in greetings">
+                            <td>{{ item.person.id }}</td>
+                            <td>{{ item.person.surname }}</td>
+                            <td>{{ item.person.name }}</td>
+                            <td>{{ item.person.fathername }}</td>
+                            <td>{{ item.profession }}</td>
+                            <td>{{ item.experience }}</td>
+                            <td>{{ item.costOfExam }}</td>
+                        </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

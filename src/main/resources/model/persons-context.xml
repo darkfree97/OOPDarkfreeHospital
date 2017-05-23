@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="pers_doc_00" class="darkfree.oop.models.person.implementation.Person">
+        <property name="id" value="0"/>
+        <property name="surname" value="МЕЛЬНИК"/>
+        <property name="name" value="Валентин"/>
+        <property name="fathername" value="Тихонович"/>
+    </bean>
+    <bean id="pers_doc_01" class="darkfree.oop.models.person.implementation.Person">
+        <property name="id" value="1"/>
+        <property name="surname" value="БОЙКО"/>
+        <property name="name" value="Наталія"/>
+        <property name="fathername" value="Борисівна"/>
+    </bean>
+    <bean id="pers_doc_02" class="darkfree.oop.models.person.implementation.Person">
+        <property name="id" value="2"/>
+        <property name="surname" value="ШЕВЧЕНКО"/>
+        <property name="name" value="Денис"/>
+        <property name="fathername" value="Олегович"/>
+    </bean>
+    <bean id="pers_doc_03" class="darkfree.oop.models.person.implementation.Person">
+        <property name="id" value="3"/>
+        <property name="surname" value="БОНДАР"/>
+        <property name="name" value="Софія"/>
+        <property name="fathername" value="Адамівна"/>
+    </bean>
+    <bean id="pers_doc_04" class="darkfree.oop.models.person.implementation.Person">
+        <property name="id" value="4"/>
+        <property name="surname" value="ПАВЛЮК"/>
+        <property name="name" value="Станіслав"/>
+        <property name="fathername" value="Вадимович"/>
+    </bean>
+    <bean id="pers_pat_00" class="darkfree.oop.models.person.implementation.Person">
+        <property name="id" value="0"/>
+        <property name="surname" value="Буркун"/>
+        <property name="name" value="Єлисей"/>
+        <property name="fathername" value="Вікторович"/>
+    </bean>
+    <bean id="pers_pat_01" class="darkfree.oop.models.person.implementation.Person">
+        <property name="id" value="1"/>
+        <property name="surname" value="Верига"/>
+        <property name="name" value="Назар"/>
+        <property name="fathername" value="Русланович"/>
+    </bean>
+    <bean id="pers_pat_02" class="darkfree.oop.models.person.implementation.Person">
+        <property name="id" value="2"/>
+        <property name="surname" value="Литвин"/>
+        <property name="name" value="Гордій"/>
+        <property name="fathername" value="Мойсейович"/>
+    </bean>
+    <bean id="pers_pat_03" class="darkfree.oop.models.person.implementation.Person">
+        <property name="id" value="3"/>
+        <property name="surname" value="Гайдай"/>
+        <property name="name" value="Аліна"/>
+        <property name="fathername" value="Мирославівна"/>
+    </bean>
+    <bean id="pers_pat_04" class="darkfree.oop.models.person.implementation.Person">
+        <property name="id" value="4"/>
+        <property name="surname" value="Бебешко"/>
+        <property name="name" value="Роман"/>
+        <property name="fathername" value="Генадійович"/>
+    </bean>
+    <bean id="pers_pat_05" class="darkfree.oop.models.person.implementation.Person">
+        <property name="id" value="5"/>
+        <property name="surname" value="Руданська"/>
+        <property name="name" value="Галина"/>
+        <property name="fathername" value="Карпівна"/>
+    </bean>
+    <bean id="pers_pat_06" class="darkfree.oop.models.person.implementation.Person">
+        <property name="id" value="6"/>
+        <property name="surname" value="Данилко"/>
+        <property name="name" value="Лілія"/>
+        <property name="fathername" value="Михайлівна"/>
+    </bean>
+    <bean id="pers_pat_07" class="darkfree.oop.models.person.implementation.Person">
+        <property name="id" value="7"/>
+        <property name="surname" value="Сіщук"/>
+        <property name="name" value="Соломія"/>
+        <property name="fathername" value="Данилівна"/>
+    </bean>
+    <bean id="pers_pat_08" class="darkfree.oop.models.person.implementation.Person">
+        <property name="id" value="8"/>
+        <property name="surname" value="Собків"/>
+        <property name="name" value="Іван"/>
+        <property name="fathername" value="Казимирович"/>
+    </bean>
+    <bean id="pers_pat_09" class="darkfree.oop.models.person.implementation.Person">
+        <property name="id" value="9"/>
+        <property name="surname" value="Дахно"/>
+        <property name="name" value="Ксенія"/>
+        <property name="fathername" value="Микитівна"/>
+    </bean>
+</beans>

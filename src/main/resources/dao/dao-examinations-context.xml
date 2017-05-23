@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="../model/examinations-context.xml"/>
+    <bean id="dao_examinations" class="oop.darkfree.dao.examination.implementations.DaoExamination">
+        <constructor-arg>
+            <list>
+                <ref bean="ex_0"/>
+                <ref bean="ex_1"/>
+                <ref bean="ex_2"/>
+                <ref bean="ex_3"/>
+                <ref bean="ex_4"/>
+                <ref bean="ex_5"/>
+                <ref bean="ex_6"/>
+                <ref bean="ex_7"/>
+                <ref bean="ex_8"/>
+                <ref bean="ex_9"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>

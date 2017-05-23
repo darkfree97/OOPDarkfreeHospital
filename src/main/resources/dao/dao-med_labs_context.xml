@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <import resource="../model/med_labs_context.xml"/>
+    <bean id="dao_med_labs" class="oop.darkfree.dao.medicalLaboratories.implementations.DaoMedLab">
+        <constructor-arg>
+            <list>
+                <ref bean="med_lab_00"/>
+                <ref bean="med_lab_01"/>
+                <ref bean="med_lab_02"/>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>

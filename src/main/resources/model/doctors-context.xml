@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <import resource="persons-context.xml"/>
+    <bean id="doc_00" class="oop.darkfree.models.doctor.implementation.Doctor">
+        <property name="person" ref="pers_doc_00"/>
+        <property name="profession" value="Лор"/>
+        <property name="experience" value="5"/>
+        <property name="valueOfExam" value="15.0"/>
+    </bean>
+    <bean id="doc_01" class="oop.darkfree.models.doctor.implementation.Doctor">
+        <property name="person" ref="pers_doc_01"/>
+        <property name="profession" value="Терапевт"/>
+        <property name="experience" value="10"/>
+        <property name="valueOfExam" value="59.0"/>
+    </bean>
+    <bean id="doc_02" class="oop.darkfree.models.doctor.implementation.Doctor">
+        <property name="person" ref="pers_doc_02"/>
+        <property name="profession" value="Хірург"/>
+        <property name="experience" value="17"/>
+        <property name="valueOfExam" value="23.6"/>
+    </bean>
+    <bean id="doc_03" class="oop.darkfree.models.doctor.implementation.Doctor">
+        <property name="person" ref="pers_doc_03"/>
+        <property name="profession" value="Костоправ"/>
+        <property name="experience" value="21"/>
+        <property name="valueOfExam" value="73.0"/>
+    </bean>
+    <bean id="doc_04" class="oop.darkfree.models.doctor.implementation.Doctor">
+        <property name="person" ref="pers_doc_04"/>
+        <property name="profession" value="Стоматолог"/>
+        <property name="experience" value="35"/>
+        <property name="valueOfExam" value="43.0"/>
+    </bean>
+</beans>

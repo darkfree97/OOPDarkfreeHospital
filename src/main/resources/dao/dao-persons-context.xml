@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <import resource="../model/persons-context.xml"/>
+    <bean id="dao_persons" class="oop.darkfree.dao.person.implementations.DaoPerson">
+        <constructor-arg>
+            <list>
+                <ref bean="pers_doc_00"/>
+                <ref bean="pers_doc_01"/>
+                <ref bean="pers_doc_02"/>
+                <ref bean="pers_doc_03"/>
+                <ref bean="pers_doc_04"/>
+                <ref bean="pers_pat_00"/>
+                <ref bean="pers_pat_01"/>
+                <ref bean="pers_pat_02"/>
+                <ref bean="pers_pat_03"/>
+                <ref bean="pers_pat_04"/>
+                <ref bean="pers_pat_05"/>
+                <ref bean="pers_pat_06"/>
+                <ref bean="pers_pat_07"/>
+                <ref bean="pers_pat_08"/>
+                <ref bean="pers_pat_09"/>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>

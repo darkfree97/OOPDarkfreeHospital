@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <import resource="medecine-context.xml"/>
+    <bean id="diagn_00" class="oop.darkfree.models.diagnosis.implementation.Diagnosis">
+        <property name="diagnosis" value="Цинга"/>
+        <property name="medicine" ref="medicine_00"/>
+        <property name="takingMedicine" value="Приймати тричі в день після їжі"/>
+        <property name="therapyPeriodByDays" value="60"/>
+    </bean>
+    <bean id="diagn_01" class="oop.darkfree.models.diagnosis.implementation.Diagnosis">
+        <property name="diagnosis" value="Беззсоння"/>
+        <property name="medicine" ref="medicine_01"/>
+        <property name="takingMedicine" value="Приймати за 2 год до сну"/>
+        <property name="therapyPeriodByDays" value="365"/>
+    </bean>
+    <bean id="diagn_02" class="oop.darkfree.models.diagnosis.implementation.Diagnosis">
+        <property name="diagnosis" value="Хронічний біль"/>
+        <property name="medicine" ref="medicine_02"/>
+        <property name="takingMedicine" value="Приймати при посиленні болю"/>
+        <property name="therapyPeriodByDays" value="7"/>
+    </bean>
+</beans>

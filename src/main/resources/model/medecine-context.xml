@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="medicine_00" class="oop.darkfree.models.medicine.implementation.Medicine">
+        <property name="name" value="Аскорбінка"/>
+        <property name="type" value="Pill"/>
+        <property name="appointment" value="Для укріплення імунітету"/>
+        <property name="price" value="32.0"/>
+    </bean>
+    <bean id="medicine_01" class="oop.darkfree.models.medicine.implementation.Medicine">
+        <property name="name" value="Валер'янка"/>
+        <property name="type" value="Mixture"/>
+        <property name="appointment" value="Заспокійливе"/>
+        <property name="price" value="50.0"/>
+    </bean>
+    <bean id="medicine_02" class="oop.darkfree.models.medicine.implementation.Medicine">
+        <property name="name" value="Вікодин"/>
+        <property name="type" value="Injection"/>
+        <property name="appointment" value="Обезболювальне"/>
+        <property name="price" value="500.0"/>
+    </bean>
+</beans>

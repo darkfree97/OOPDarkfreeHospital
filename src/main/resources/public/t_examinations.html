@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Журнал обстежень</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/updated.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/main.js"></script>
+
+</head>
+<body ng-app = "OOPDarkfreeHospital">
+<nav class="navbar navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/"><div id="logo_container"><img id="logo" src="images/hospital-logo.png">Hospital</div></a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a class="active" href="t_examinations.html">Обстеження</a></li>
+            <li><a href="t_patients.html">Пацієнти</a></li>
+            <li><a href="t_doctors.html">Лікарі</a></li>
+            <li><a href="t_diagnosis.html">Діагнози</a></li>
+            <li><a href="t_med_labs.html">Лабораторії</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container" style="margin-top: 30px" ng-controller = "ExaminationCtrl" >
+    <div class="row">
+        <div class="col-md12">
+            <div class="panel panel-default">
+                <div class="panel-heading"> Журнал обстежень </div>
+                <div class="panel-body">
+
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Пацієнт</th>
+                            <th>Лікар</th>
+                            <th>Діагноз</th>
+                            <th>Медична лабораторія</th>
+                            <th>Загальна вартість</th>
+                            <th>Дата обстеження</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr ng-repeat = "item in greetings">
+                            <td>{{ item.id }}</td>
+                            <td>{{ item.patient.person.info }}</td>
+                            <td>{{ item.doctors[0].person.info }}</td>
+                            <td>{{ item.diagnoses[0].diagnosis }}</td>
+                            <td>{{ item.medLabs[0].labName }}</td>
+                            <td>{{ item.totalCost }}</td>
+                            <td>{{ item.date }}</td>
+                        </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

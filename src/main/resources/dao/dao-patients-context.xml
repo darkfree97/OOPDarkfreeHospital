@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <import resource="../model/patients-context.xml"/>
+    <bean id="dao_patients" class="oop.darkfree.dao.patient.implementations.DaoPatient">
+        <constructor-arg>
+            <list>
+                <ref bean="patient_00"/>
+                <ref bean="patient_01"/>
+                <ref bean="patient_02"/>
+                <ref bean="patient_03"/>
+                <ref bean="patient_04"/>
+                <ref bean="patient_05"/>
+                <ref bean="patient_06"/>
+                <ref bean="patient_07"/>
+                <ref bean="patient_08"/>
+                <ref bean="patient_09"/>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>

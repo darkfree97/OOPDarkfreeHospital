@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="med_lab_00" class="oop.darkfree.models.medicalLaboratories.implementation.MedicalLab">
+        <property name="labName" value="МРТ"/>
+        <property name="extrPoint" value="High"/>
+        <property name="res" value="good"/>
+        <property name="price" value="100.0"/>
+    </bean>
+    <bean id="med_lab_01" class="oop.darkfree.models.medicalLaboratories.implementation.MedicalLab">
+        <property name="labName" value="ЕКГ"/>
+        <property name="extrPoint" value="Middle"/>
+        <property name="res" value="good"/>
+        <property name="price" value="30.0"/>
+    </bean>
+    <bean id="med_lab_02" class="oop.darkfree.models.medicalLaboratories.implementation.MedicalLab">
+        <property name="labName" value="УЗД"/>
+        <property name="extrPoint" value="Low"/>
+        <property name="res" value="good"/>
+        <property name="price" value="25.0"/>
+    </bean>
+</beans>

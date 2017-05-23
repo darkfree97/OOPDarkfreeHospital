@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <import resource="patients-context.xml"/>
+    <import resource="doctors-context.xml"/>
+    <import resource="med_labs_context.xml"/>
+    <import resource="diagnosis-context.xml"/>
+
+    <bean id="ex_0" class="oop.darkfree.models.examination.implementation.Examination">
+        <property name="id" value="0"/>
+        <property name="patient" ref="patient_00"/>
+        <property name="doctors">
+            <list>
+                <ref bean="doc_00"/>
+            </list>
+        </property>
+        <property name="medLabs">
+            <list>
+                <ref bean="med_lab_02"/>
+            </list>
+        </property>
+        <property name="diagnoses">
+            <list>
+                <ref bean="diagn_00"/>
+            </list>
+        </property>
+        <property name="date" value="2017/03/17"/>
+    </bean>
+    <bean id="ex_1" class="oop.darkfree.models.examination.implementation.Examination">
+        <property name="id" value="0"/>
+        <property name="patient" ref="patient_01"/>
+        <property name="doctors">
+            <list>
+                <ref bean="doc_01"/>
+            </list>
+        </property>
+        <property name="medLabs">
+            <list>
+                <ref bean="med_lab_01"/>
+            </list>
+        </property>
+        <property name="diagnoses">
+            <list>
+                <ref bean="diagn_01"/>
+            </list>
+        </property>
+        <property name="date" value="2017/03/17"/>
+    </bean>
+    <bean id="ex_2" class="oop.darkfree.models.examination.implementation.Examination">
+        <property name="id" value="0"/>
+        <property name="patient" ref="patient_02"/>
+        <property name="doctors">
+            <list>
+                <ref bean="doc_02"/>
+            </list>
+        </property>
+        <property name="medLabs">
+            <list>
+                <ref bean="med_lab_00"/>
+            </list>
+        </property>
+        <property name="diagnoses">
+            <list>
+                <ref bean="diagn_02"/>
+            </list>
+        </property>
+        <property name="date" value="2017/03/16"/>
+    </bean>
+    <bean id="ex_3" class="oop.darkfree.models.examination.implementation.Examination">
+        <property name="id" value="0"/>
+        <property name="patient" ref="patient_03"/>
+        <property name="doctors">
+            <list>
+                <ref bean="doc_03"/>
+            </list>
+        </property>
+        <property name="medLabs">
+            <list>
+                <ref bean="med_lab_01"/>
+            </list>
+        </property>
+        <property name="diagnoses">
+            <list>
+                <ref bean="diagn_01"/>
+            </list>
+        </property>
+        <property name="date" value="2017/03/17"/>
+    </bean>
+    <bean id="ex_4" class="oop.darkfree.models.examination.implementation.Examination">
+        <property name="id" value="0"/>
+        <property name="patient" ref="patient_04"/>
+        <property name="doctors">
+            <list>
+                <ref bean="doc_04"/>
+            </list>
+        </property>
+        <property name="medLabs">
+            <list>
+                <ref bean="med_lab_00"/>
+            </list>
+        </property>
+        <property name="diagnoses">
+            <list>
+                <ref bean="diagn_02"/>
+            </list>
+        </property>
+        <property name="date" value="2017/03/17"/>
+    </bean>
+    <bean id="ex_5" class="oop.darkfree.models.examination.implementation.Examination">
+        <property name="id" value="0"/>
+        <property name="patient" ref="patient_05"/>
+        <property name="doctors">
+            <list>
+                <ref bean="doc_00"/>
+            </list>
+        </property>
+        <property name="medLabs">
+            <list>
+                <ref bean="med_lab_02"/>
+            </list>
+        </property>
+        <property name="diagnoses">
+            <list>
+                <ref bean="diagn_00"/>
+            </list>
+        </property>
+        <property name="date" value="2017/03/17"/>
+    </bean>
+    <bean id="ex_6" class="oop.darkfree.models.examination.implementation.Examination">
+        <property name="id" value="0"/>
+        <property name="patient" ref="patient_06"/>
+        <property name="doctors">
+            <list>
+                <ref bean="doc_01"/>
+            </list>
+        </property>
+        <property name="medLabs">
+            <list>
+                <ref bean="med_lab_00"/>
+            </list>
+        </property>
+        <property name="diagnoses">
+            <list>
+                <ref bean="diagn_00"/>
+            </list>
+        </property>
+        <property name="date" value="2017/03/17"/>
+    </bean>
+    <bean id="ex_7" class="oop.darkfree.models.examination.implementation.Examination">
+        <property name="id" value="0"/>
+        <property name="patient" ref="patient_07"/>
+        <property name="doctors">
+            <list>
+                <ref bean="doc_02"/>
+            </list>
+        </property>
+        <property name="medLabs">
+            <list>
+                <ref bean="med_lab_01"/>
+            </list>
+        </property>
+        <property name="diagnoses">
+            <list>
+                <ref bean="diagn_01"/>
+            </list>
+        </property>
+        <property name="date" value="2017/03/17"/>
+    </bean>
+    <bean id="ex_8" class="oop.darkfree.models.examination.implementation.Examination">
+        <property name="id" value="0"/>
+        <property name="patient" ref="patient_08"/>
+        <property name="doctors">
+            <list>
+                <ref bean="doc_03"/>
+            </list>
+        </property>
+        <property name="medLabs">
+            <list>
+                <ref bean="med_lab_02"/>
+            </list>
+        </property>
+        <property name="diagnoses">
+            <list>
+                <ref bean="diagn_02"/>
+            </list>
+        </property>
+        <property name="date" value="2017/03/17"/>
+    </bean>
+    <bean id="ex_9" class="oop.darkfree.models.examination.implementation.Examination">
+        <property name="id" value="0"/>
+        <property name="patient" ref="patient_09"/>
+        <property name="doctors">
+            <list>
+                <ref bean="doc_04"/>
+            </list>
+        </property>
+        <property name="medLabs">
+            <list>
+                <ref bean="med_lab_00"/>
+            </list>
+        </property>
+        <property name="diagnoses">
+            <list>
+                <ref bean="diagn_01"/>
+            </list>
+        </property>
+        <property name="date" value="2017/03/17"/>
+    </bean>
+</beans>
