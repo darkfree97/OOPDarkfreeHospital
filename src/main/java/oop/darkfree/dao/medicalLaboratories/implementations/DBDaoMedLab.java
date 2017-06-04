@@ -41,7 +41,7 @@ public class DBDaoMedLab implements IDaoMedLab{
     }
 
     @Override
-    public void updateMedicalLab(MedicalLab medicalLab) {
+    public void updateMedicalLab(String key, MedicalLab medicalLab) {
 
     }
 

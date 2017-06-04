@@ -75,4 +75,26 @@ public class MedicalLab implements IMedicalLab {
                 "\n     Extreme Point - " + extrPoint +
                 "\n     Cost - " + price + "\n";
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        MedicalLab that = (MedicalLab) o;
+
+        if (labName != null ? !labName.equals(that.labName) : that.labName != null) return false;
+        if (res != null ? !res.equals(that.res) : that.res != null) return false;
+        if (extrPoint != that.extrPoint) return false;
+        return price != null ? price.equals(that.price) : that.price == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = labName != null ? labName.hashCode() : 0;
+        result = 31 * result + (res != null ? res.hashCode() : 0);
+        result = 31 * result + (extrPoint != null ? extrPoint.hashCode() : 0);
+        result = 31 * result + (price != null ? price.hashCode() : 0);
+        return result;
+    }
 }

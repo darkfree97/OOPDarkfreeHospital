@@ -64,4 +64,26 @@ public class Doctor implements IDoctor {
                 "\n     experience - " + experience +
                 "\n     valueOfExam - " + valueOfExam + "\n";
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Doctor doctor = (Doctor) o;
+
+        if (person != null ? !person.equals(doctor.person) : doctor.person != null) return false;
+        if (profession != null ? !profession.equals(doctor.profession) : doctor.profession != null) return false;
+        if (experience != null ? !experience.equals(doctor.experience) : doctor.experience != null) return false;
+        return valueOfExam != null ? valueOfExam.equals(doctor.valueOfExam) : doctor.valueOfExam == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = person != null ? person.hashCode() : 0;
+        result = 31 * result + (profession != null ? profession.hashCode() : 0);
+        result = 31 * result + (experience != null ? experience.hashCode() : 0);
+        result = 31 * result + (valueOfExam != null ? valueOfExam.hashCode() : 0);
+        return result;
+    }
 }

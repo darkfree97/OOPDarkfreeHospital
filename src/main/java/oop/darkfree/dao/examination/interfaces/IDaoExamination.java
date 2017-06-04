@@ -11,7 +11,7 @@ public interface IDaoExamination {
     List<Examination> getAll();
     Examination getExamination(int id);
     void createExamination(Examination examination);
-    void updateExamination(Examination examination);
+    void updateExamination(Integer key, Examination examination);
     void deleteExamination(int id);
     void showAll();
 }

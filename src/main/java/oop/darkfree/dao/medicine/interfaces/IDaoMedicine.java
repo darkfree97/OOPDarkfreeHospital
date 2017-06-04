@@ -11,6 +11,6 @@ public interface IDaoMedicine {
     List<Medicine> getAll();
     Medicine getMedicine(String name);
     void createMedicine(Medicine medicine);
-    void updateMedicine(Medicine medicine);
+    void updateMedicine(String key, Medicine medicine);
     void deleteMedicine(String name);
 }

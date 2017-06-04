@@ -40,7 +40,7 @@ public class DBDaoExaminations implements IDaoExamination {
     }
 
     @Override
-    public void updateExamination(Examination examination) {
+    public void updateExamination(Integer key, Examination examination) {
 
     }
 

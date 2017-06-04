@@ -46,9 +46,9 @@ public class DaoExamination implements IDaoExamination {
     }
 
     @Override
-    public void updateExamination(Examination examination) {
+    public void updateExamination(Integer key, Examination examination) {
         examinations.forEach(p->{
-            if(p.getId()==examination.getId()){
+            if(p.getId()==key){
                 p = examination;
             }
         });

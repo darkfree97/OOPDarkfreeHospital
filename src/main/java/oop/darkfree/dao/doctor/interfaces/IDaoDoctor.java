@@ -11,6 +11,6 @@ public interface IDaoDoctor {
     List<Doctor> getAll();
     Doctor getDoctor(int id);
     void createDoctor(Doctor doctor);
-    void updateDoctor(Doctor doctor);
+    void updateDoctor(Integer key, Doctor doctor);
     void deleteDoctor(int id);
 }

@@ -28,7 +28,7 @@ public class DaoMedicine implements IDaoMedicine {
     }
 
     @Override
-    public void updateMedicine(Medicine medicine) {
+    public void updateMedicine(String key, Medicine medicine) {
 
     }
 

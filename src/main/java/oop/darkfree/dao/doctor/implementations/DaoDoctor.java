@@ -44,7 +44,7 @@ public class DaoDoctor implements IDaoDoctor {
     }
 
     @Override
-    public void updateDoctor(Doctor doctor) {
+    public void updateDoctor(Integer key, Doctor doctor) {
 
     }
 

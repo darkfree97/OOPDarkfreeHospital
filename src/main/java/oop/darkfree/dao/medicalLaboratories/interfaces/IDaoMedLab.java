@@ -11,6 +11,6 @@ public interface IDaoMedLab {
     List<MedicalLab> getAll();
     MedicalLab getMedicalLab(String name);
     void createMedicalLab(MedicalLab medicalLab);
-    void updateMedicalLab(MedicalLab medicalLab);
+    void updateMedicalLab(String key, MedicalLab medicalLab);
     void deleteMedicalLab(String name);
 }

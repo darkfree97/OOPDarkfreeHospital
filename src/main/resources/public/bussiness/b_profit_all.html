@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вся виручка</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/updated.css">
+    <script src="../js/angular.min.js"></script>
+    <script>
+        var app = angular.module("App", []);
+
+        app.controller("Ctrl", function($scope, $http){
+            $scope.data = 0.0;
+            $http.get('/get/profit/all').then(function (response){
+                $scope.data=response.data;
+            });
+        });
+    </script>
+</head>
+<body ng-app="App">
+
+<div class="container" style="margin-top: 30px" ng-controller = "Ctrl" >
+    <div class="row">
+        <div class="col-md12">
+            <div class="panel panel-default">
+                <div class="panel-heading"> Прибуток за весь час </div>
+                <div class="panel-body">
+
+                    <table class="table table-striped">
+                        <thead>
+                        <tr ng-madel = "data" style="font-size: 25px; text-align: center;">
+                            <td>{{ data }}</td>
+                        </tr>
+                        </thead>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

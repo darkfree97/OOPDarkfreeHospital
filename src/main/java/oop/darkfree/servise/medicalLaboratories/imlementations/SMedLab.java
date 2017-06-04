@@ -47,8 +47,8 @@ public class SMedLab implements ISMedLab {
     }
 
     @Override
-    public void updateMedicalLab(MedicalLab medicalLab) {
-        medLabs.updateMedicalLab(medicalLab);
+    public void updateMedicalLab(String key, MedicalLab medicalLab) {
+        medLabs.updateMedicalLab(key, medicalLab);
     }
 
     @Override

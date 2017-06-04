@@ -32,4 +32,3 @@ app.controller("MedLabCtrl", function($scope, $http){
         $scope.greetings=response.data;
     });
 });
-

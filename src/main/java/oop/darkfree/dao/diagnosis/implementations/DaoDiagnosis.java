@@ -43,9 +43,9 @@ public class DaoDiagnosis implements IDaoDiagnosis {
     }
 
     @Override
-    public void updateDiagnosis(Diagnosis diagnosis) {
+    public void updateDiagnosis(String key, Diagnosis diagnosis) {
         diagnosises.forEach(p->{
-            if(p.getDiagnosis().equals(diagnosis.getDiagnosis()))
+            if(p.getDiagnosis().equals(key))
                 p = diagnosis;
         });
     }

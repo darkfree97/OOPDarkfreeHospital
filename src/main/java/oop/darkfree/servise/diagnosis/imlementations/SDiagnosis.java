@@ -45,8 +45,8 @@ public class SDiagnosis implements ISDiagnosis {
     }
 
     @Override
-    public void updateDiagnosis(Diagnosis diagnosis) {
-        this.diagnosis.updateDiagnosis(diagnosis);
+    public void updateDiagnosis(String key, Diagnosis diagnosis) {
+        this.diagnosis.updateDiagnosis(key, diagnosis);
     }
 
     @Override

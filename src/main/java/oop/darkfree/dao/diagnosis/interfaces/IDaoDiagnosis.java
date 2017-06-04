@@ -11,6 +11,6 @@ public interface IDaoDiagnosis {
     List<Diagnosis> getAll();
     Diagnosis getDiagnosis(String name);
     void createDiagnosis(Diagnosis diagnosis);
-    void updateDiagnosis(Diagnosis diagnosis);
+    void updateDiagnosis(String key,Diagnosis diagnosis);
     void deleteDiagnosis(String name);
 }

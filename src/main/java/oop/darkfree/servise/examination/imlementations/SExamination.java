@@ -55,8 +55,8 @@ public class SExamination implements ISExamination {
     }
 
     @Override
-    public void updateExamination(Examination examination) {
-        this.examination.updateExamination(examination);
+    public void updateExamination(Integer key,Examination examination) {
+        this.examination.updateExamination(key, examination);
     }
 
     @Override
@@ -72,8 +72,9 @@ public class SExamination implements ISExamination {
     @Override
     public Double getAllProfit() {
         Double profit = 0.0;
+        List<Examination> examinationList = examination.getAll();
         try {
-            for(IExamination examination : this.examination.getAll()){
+            for(IExamination examination : examinationList){
                 profit += examination.getTotalCost();
             }
         }
@@ -86,8 +87,9 @@ public class SExamination implements ISExamination {
     @Override
     public Double getProfitByDate(Date date) {
         Double profit = 0.0;
+        List<Examination> examinationList = examination.getAll();
         try{
-            for(IExamination item : this.examination.getAll()){
+            for(IExamination item : examinationList){
                 if(item.getDate().getDate() == date.getDate()){
                     profit += item.getTotalCost();
                 }
@@ -130,15 +132,16 @@ public class SExamination implements ISExamination {
     public List<IDoctor> getNominantToBonus(int n) {
         IDoctor temp;
         List<IDoctor> doctors = new ArrayList<>();
-        examination.getAll().forEach(item->item.getDoctors().stream().filter(p->!doctors.contains(p)).forEach(doctors::add));
+        List<Examination> examinationList = examination.getAll();
+        examinationList.forEach(item->item.getDoctors().stream().filter(p->!doctors.contains(p)).forEach(doctors::add));
         List<IDoctor> doctors_copy = new ArrayList<>();
         List<IDoctor> doctorsToBonus = new ArrayList<>();
-        HashMap<IDoctor,Integer> doctorsProductivity = new HashMap<IDoctor, Integer>();
+        HashMap<IDoctor,Integer> doctorsProductivity = new HashMap<>();
         doctors_copy.addAll(doctors);
         for (IDoctor doctor : doctors_copy){
             doctorsProductivity.put(doctor,0);
         }
-        for (IExamination item : this.examination.getAll()){
+        for (IExamination item : examinationList){
             for (IDoctor doctor : item.getDoctors()){
                 doctorsProductivity.put(doctor,(doctorsProductivity.get(doctor))+1);
             }
@@ -166,14 +169,15 @@ public class SExamination implements ISExamination {
     public List<IMedicalLab> getLossesLabs(int n) {
         IMedicalLab temp;
         List<IMedicalLab> medicalLabList = new ArrayList<>();
-        examination.getAll().forEach(item->item.getMedLabs().stream().filter(p->!medicalLabList.contains(p)).forEach(medicalLabList::add));
+        List<Examination> examinationList = examination.getAll();
+        examinationList.forEach(item->item.getMedLabs().stream().filter(p->!medicalLabList.contains(p)).forEach(medicalLabList::add));
         List<IMedicalLab> medLabs_copy = new ArrayList<>();
         List<IMedicalLab> lossesMedLabs = new ArrayList<>();
-        HashMap<IMedicalLab,Integer> lossesList = new HashMap<IMedicalLab, Integer>();
+        HashMap<IMedicalLab,Integer> lossesList = new HashMap<>();
         for (IMedicalLab medLab : medicalLabList){
             lossesList.put(medLab,0);
         }
-        for (IExamination item : this.examination.getAll()){
+        for (IExamination item : examinationList){
             for (IMedicalLab medLab : item.getMedLabs()){
                 lossesList.put(medLab,lossesList.get(medLab)+1);
             }

@@ -23,8 +23,8 @@ public class DaoMedLab implements IDaoMedLab {
     }
 
     @Override
-    public void updateMedicalLab(MedicalLab medicalLab) {
-        medicalLabs.stream().filter(p->medicalLab.getLabName().equals(p.getLabName())).forEach(p->p = medicalLab);
+    public void updateMedicalLab(String key, MedicalLab medicalLab) {
+        medicalLabs.stream().filter(p->key.equals(p.getLabName())).forEach(p->p = medicalLab);
     }
 
     @Override

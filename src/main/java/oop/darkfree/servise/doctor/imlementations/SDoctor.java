@@ -47,8 +47,8 @@ public class SDoctor implements ISDoctor {
     }
 
     @Override
-    public void updateDoctor(Doctor doctor) {
-        doctors.updateDoctor(doctor);
+    public void updateDoctor(Integer key, Doctor doctor) {
+        doctors.updateDoctor(key, doctor);
     }
 
     @Override

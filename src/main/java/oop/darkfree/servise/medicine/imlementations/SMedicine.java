@@ -47,8 +47,8 @@ public class SMedicine implements ISMedicine {
     }
 
     @Override
-    public void updateMedicine(Medicine medicine) {
-        medicines.updateMedicine(medicine);
+    public void updateMedicine(String key, Medicine medicine) {
+        medicines.updateMedicine(key, medicine);
     }
 
     @Override
