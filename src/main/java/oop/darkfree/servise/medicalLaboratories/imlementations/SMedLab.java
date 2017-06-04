@@ -11,9 +11,10 @@ import java.util.List;
  * Created by Darkfree on 09.04.2017.
  */
 public class SMedLab implements ISMedLab {
-    IDaoMedLab medLabs = new DaoMedLab();
+    IDaoMedLab medLabs;
 
     public SMedLab() {
+        medLabs = new DaoMedLab();
     }
 
     public SMedLab(IDaoMedLab medLabs) {

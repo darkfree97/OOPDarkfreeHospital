@@ -11,9 +11,10 @@ import java.util.List;
  * Created by Darkfree on 09.04.2017.
  */
 public class SPatient implements ISPatient {
-    IDaoPatient patients = new DaoPatient();
+    IDaoPatient patients;
 
     public SPatient() {
+        patients = new DaoPatient();
     }
 
     public SPatient(IDaoPatient patients) {

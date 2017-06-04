@@ -11,9 +11,10 @@ import java.util.List;
  * Created by Darkfree on 09.04.2017.
  */
 public class SPerson implements ISPerson{
-    IDaoPerson persons = new DaoPerson();
+    IDaoPerson persons;
 
     public SPerson() {
+        persons = new DaoPerson();
     }
 
     public SPerson(IDaoPerson persons) {

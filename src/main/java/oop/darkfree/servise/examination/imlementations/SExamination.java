@@ -20,9 +20,10 @@ import java.util.List;
 
 @Service
 public class SExamination implements ISExamination {
-    private IDaoExamination examination = new DaoExamination();
+    private IDaoExamination examination;
 
     public SExamination() {
+        examination = new DaoExamination();
     }
 
     public SExamination(IDaoExamination examination) {

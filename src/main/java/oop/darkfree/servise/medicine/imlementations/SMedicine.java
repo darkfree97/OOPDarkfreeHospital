@@ -11,9 +11,10 @@ import java.util.List;
  * Created by Darkfree on 09.04.2017.
  */
 public class SMedicine implements ISMedicine {
-    IDaoMedicine medicines = new DaoMedicine();
+    IDaoMedicine medicines;
 
     public SMedicine() {
+        medicines = new DaoMedicine();
     }
 
     public SMedicine(IDaoMedicine medicines) {

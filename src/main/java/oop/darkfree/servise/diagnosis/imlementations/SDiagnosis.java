@@ -11,9 +11,10 @@ import java.util.List;
  * Created by Darkfree on 09.04.2017.
  */
 public class SDiagnosis implements ISDiagnosis {
-    IDaoDiagnosis diagnosis = new DaoDiagnosis();
+    IDaoDiagnosis diagnosis;
 
     public SDiagnosis() {
+        diagnosis = new DaoDiagnosis();
     }
 
     public SDiagnosis(IDaoDiagnosis diagnosis) {

@@ -11,9 +11,10 @@ import java.util.List;
  * Created by Darkfree on 09.04.2017.
  */
 public class SDoctor implements ISDoctor {
-    IDaoDoctor doctors = new DaoDoctor();
+    IDaoDoctor doctors;
 
     public SDoctor() {
+        doctors = new DaoDoctor();
     }
 
     public SDoctor(IDaoDoctor doctors) {
