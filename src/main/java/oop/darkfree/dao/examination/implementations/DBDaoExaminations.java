@@ -20,7 +20,6 @@ public class DBDaoExaminations implements IDaoExamination {
     }
 
     public DBDaoExaminations(DataSource dataSource) {
-
         this.dataSource = dataSource;
     }
 
@@ -52,6 +51,5 @@ public class DBDaoExaminations implements IDaoExamination {
 
     @Override
     public void showAll() {
-
     }
 }

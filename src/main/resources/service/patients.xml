@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <import resource="../dao/dao-patients-context.xml"/>
-    <bean id="patients_s" class="darkfree.oop.servise.patient.imlementations.SPatient">
+    <bean id="patients_s" class="oop.darkfree.servise.patient.imlementations.SPatient">
         <constructor-arg>
             <ref bean="dao_patients"/>
         </constructor-arg>

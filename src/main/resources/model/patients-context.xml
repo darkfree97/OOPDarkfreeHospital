@@ -2,43 +2,43 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="patient_00" class="darkfree.oop.models.patient.implementation.Patient">
+    <bean id="patient_00" class="oop.darkfree.models.patient.implementation.Patient">
         <property name="person" ref="pers_pat_00"/>
         <property name="year" value="1934"/>
     </bean>
-    <bean id="patient_01" class="darkfree.oop.models.patient.implementation.Patient">
+    <bean id="patient_01" class="oop.darkfree.models.patient.implementation.Patient">
         <property name="person" ref="pers_pat_01"/>
         <property name="year" value="1927"/>
     </bean>
-    <bean id="patient_02" class="darkfree.oop.models.patient.implementation.Patient">
+    <bean id="patient_02" class="oop.darkfree.models.patient.implementation.Patient">
         <property name="person" ref="pers_pat_02"/>
         <property name="year" value="1985"/>
     </bean>
-    <bean id="patient_03" class="darkfree.oop.models.patient.implementation.Patient">
+    <bean id="patient_03" class="oop.darkfree.models.patient.implementation.Patient">
         <property name="person" ref="pers_pat_03"/>
         <property name="year" value="1986"/>
     </bean>
-    <bean id="patient_04" class="darkfree.oop.models.patient.implementation.Patient">
+    <bean id="patient_04" class="oop.darkfree.models.patient.implementation.Patient">
         <property name="person" ref="pers_pat_04"/>
         <property name="year" value="1967"/>
     </bean>
-    <bean id="patient_05" class="darkfree.oop.models.patient.implementation.Patient">
+    <bean id="patient_05" class="oop.darkfree.models.patient.implementation.Patient">
         <property name="person" ref="pers_pat_05"/>
         <property name="year" value="1907"/>
     </bean>
-    <bean id="patient_06" class="darkfree.oop.models.patient.implementation.Patient">
+    <bean id="patient_06" class="oop.darkfree.models.patient.implementation.Patient">
         <property name="person" ref="pers_pat_06"/>
         <property name="year" value="1912"/>
     </bean>
-    <bean id="patient_07" class="darkfree.oop.models.patient.implementation.Patient">
+    <bean id="patient_07" class="oop.darkfree.models.patient.implementation.Patient">
         <property name="person" ref="pers_pat_07"/>
         <property name="year" value="1997"/>
     </bean>
-    <bean id="patient_08" class="darkfree.oop.models.patient.implementation.Patient">
+    <bean id="patient_08" class="oop.darkfree.models.patient.implementation.Patient">
         <property name="person" ref="pers_pat_08"/>
         <property name="year" value="1998"/>
     </bean>
-    <bean id="patient_09" class="darkfree.oop.models.patient.implementation.Patient">
+    <bean id="patient_09" class="oop.darkfree.models.patient.implementation.Patient">
         <property name="person" ref="pers_pat_09"/>
         <property name="year" value="1999"/>
     </bean>

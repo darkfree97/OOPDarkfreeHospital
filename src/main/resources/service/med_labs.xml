@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <import resource="../dao/dao-med_labs_context.xml"/>
-    <bean id="med_labs_s" class="darkfree.oop.servise.medicalLaboratories.imlementations.SMedLab">
+    <bean id="med_labs_s" class="oop.darkfree.servise.medicalLaboratories.imlementations.SMedLab">
         <constructor-arg>
             <ref bean="dao_med_labs"/>
         </constructor-arg>
