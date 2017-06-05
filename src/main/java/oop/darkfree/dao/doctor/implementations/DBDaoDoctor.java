@@ -53,15 +53,16 @@ public class DBDaoDoctor implements IDaoDoctor{
     @Override
     public void updateDoctor(Integer key, Doctor doctor) {
         JdbcTemplate delete = new JdbcTemplate(dataSource);
-        delete.update("FROM doctors WHERE id = ? UPDATE FIRST (d_surname,d_name,d_fathername,profession,expiriense,value_of_exam) VALUES(?,?,?,?,?,?) ",
+        delete.update(" UPDATE doctors SET d_surname=?,d_name=?,d_fathername=?,profession=?,expiriense=?,value_of_exam=? WHERE id=?",
                 new Object[]{
-                        key,
                         doctor.getPerson().getSurname(),
                         doctor.getPerson().getName(),
                         doctor.getPerson().getFathername(),
                         doctor.getProfession(),
                         doctor.getExperience(),
-                        doctor.getCostOfExam()});
+                        doctor.getCostOfExam(),
+                        key
+        });
     }
 
     @Override
