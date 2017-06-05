@@ -11,6 +11,7 @@ import java.util.List;
  */
 public class DaoExamination implements IDaoExamination {
     List<Examination> examinations = new ArrayList<>();
+    private static Examination temp;
 
     public DaoExamination() {
     }
@@ -47,16 +48,24 @@ public class DaoExamination implements IDaoExamination {
 
     @Override
     public void updateExamination(Integer key, Examination examination) {
+        temp=null;
         examinations.forEach(p->{
             if(p.getId()==key){
-                p = examination;
+                temp = p;
             }
         });
+        examinations.set(examinations.indexOf(temp),examination);
     }
 
     @Override
     public void deleteExamination(int id) {
-        examinations.stream().filter(p->p.getId()==id).forEach(p->examinations.remove(p));
+        temp=null;
+        examinations.forEach(p->{
+            if(p.getId()==id){
+                temp = p;
+            }
+        });
+        examinations.remove(temp);
     }
 
     @Override

@@ -11,6 +11,15 @@ import java.util.List;
  */
 public class DaoMedLab implements IDaoMedLab {
     List<MedicalLab> medicalLabs  = new ArrayList<>();
+    private static MedicalLab temp;
+
+    public DaoMedLab() {
+
+    }
+
+    public DaoMedLab(List<MedicalLab> medicalLabs) {
+        this.medicalLabs = medicalLabs;
+    }
 
     @Override
     public List<MedicalLab> getAll() {
@@ -24,7 +33,12 @@ public class DaoMedLab implements IDaoMedLab {
 
     @Override
     public void updateMedicalLab(String key, MedicalLab medicalLab) {
-        medicalLabs.stream().filter(p->key.equals(p.getLabName())).forEach(p->p = medicalLab);
+        temp=null;
+        medicalLabs.forEach(p->{
+            if(p.getLabName().equals(key))
+                temp=p;
+        });
+        medicalLabs.set(medicalLabs.indexOf(temp),medicalLab);
     }
 
     @Override
@@ -34,7 +48,12 @@ public class DaoMedLab implements IDaoMedLab {
 
     @Override
     public void deleteMedicalLab(String name) {
-        medicalLabs.stream().filter(p->p.getLabName().equals(name)).forEach(p->medicalLabs.remove(p));
+        temp=null;
+        medicalLabs.forEach(p->{
+            if(p.getLabName().equals(name))
+                temp=p;
+        });
+        medicalLabs.remove(temp);
     }
 
     public List<MedicalLab> getMedicalLabs() {
@@ -42,15 +61,6 @@ public class DaoMedLab implements IDaoMedLab {
     }
 
     public void setMedicalLabs(List<MedicalLab> medicalLabs) {
-        this.medicalLabs = medicalLabs;
-    }
-
-    public DaoMedLab() {
-
-    }
-
-    public DaoMedLab(List<MedicalLab> medicalLabs) {
-
         this.medicalLabs = medicalLabs;
     }
 }

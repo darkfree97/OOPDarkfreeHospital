@@ -1,5 +1,6 @@
 package oop.darkfree.servise.examination.imlementations;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -10,6 +11,7 @@ import static org.junit.Assert.*;
 public class SExaminationTest {
     @Test
     public void getAll() throws Exception {
+
     }
 
     @Test

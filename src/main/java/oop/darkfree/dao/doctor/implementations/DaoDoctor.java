@@ -11,6 +11,7 @@ import java.util.List;
  */
 public class DaoDoctor implements IDaoDoctor {
     List<Doctor> doctors = new ArrayList<>();
+    private static Doctor temp;
 
     public DaoDoctor() {
     }
@@ -45,11 +46,23 @@ public class DaoDoctor implements IDaoDoctor {
 
     @Override
     public void updateDoctor(Integer key, Doctor doctor) {
-
+        temp=null;
+        doctors.forEach(p->{
+            if(key.equals(p.getPerson().getId())){
+                temp = p;
+            }
+        });
+        doctors.set(doctors.indexOf(temp),doctor);
     }
 
     @Override
     public void deleteDoctor(int id) {
-        doctors.stream().filter(p->p.getPerson().getId()==id).forEach(p->doctors.remove(p));
+        temp=null;
+        doctors.forEach(p->{
+            if(p.getPerson().getId()==id){
+                temp = p;
+            }
+        });
+        doctors.remove(temp);
     }
 }
