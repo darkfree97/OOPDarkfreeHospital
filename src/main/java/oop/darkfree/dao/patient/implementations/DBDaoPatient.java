@@ -37,16 +37,32 @@ public class DBDaoPatient implements IDaoPatient {
 
     @Override
     public void createPatient(Patient patient) {
-
+        JdbcTemplate insert = new JdbcTemplate(dataSource);
+        insert.update("INSERT INTO patients (p_surname, p_name, p_fathername, year) VALUES(?,?,?,?)", new Object[] {
+                patient.getPerson().getSurname(),
+                patient.getPerson().getName(),
+                patient.getPerson().getFathername(),
+                patient.getYear()
+        });
     }
 
     @Override
-    public void updatePatient(Patient patient) {
+    public void updatePatient(Integer key,Patient patient) {
+        JdbcTemplate update = new JdbcTemplate(dataSource);
+        update.update("UPDATE patients SET p_surname = ?, p_name = ?, p_fathername = ?, year = ? WHERE id = ?",new Object[] {
+                patient.getPerson().getSurname(),
+                patient.getPerson().getName(),
+                patient.getPerson().getFathername(),
+                patient.getYear(),
+                key
+        });
 
     }
 
     @Override
     public void deletePatient(int id) {
-
+        JdbcTemplate delete = new JdbcTemplate(dataSource);
+        delete.update("DELETE FROM patients WHERE id = ?",
+                new Object[] { id });
     }
 }

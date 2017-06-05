@@ -11,6 +11,6 @@ public interface IDaoPatient {
     List<Patient> getAll();
     Patient getPatient(int id);
     void createPatient(Patient patient);
-    void updatePatient(Patient patient);
+    void updatePatient(Integer key,Patient patient);
     void deletePatient(int id);
 }

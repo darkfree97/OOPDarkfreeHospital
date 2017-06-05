@@ -39,16 +39,32 @@ public class DBDaoMedicine implements IDaoMedicine {
 
     @Override
     public void createMedicine(Medicine medicine) {
+        JdbcTemplate insert = new JdbcTemplate(dataSource);
+        insert.update("INSERT INTO medecine (name, medicine_type, appointment, price) VALUES(?,?,?,?)",new Object[] {
+                medicine.getName(),
+                medicine.getType(),
+                medicine.getAppointment(),
+                medicine.getPrice()
+        });
 
     }
 
     @Override
     public void updateMedicine(String key, Medicine medicine) {
-
+        JdbcTemplate update = new JdbcTemplate(dataSource);
+        update.update("UPDATE medecine SET name = ?, medicine_type = ?, appointment = ?, price = ? WHERE name = ?",new Object[] {
+                medicine.getName(),
+                medicine.getType(),
+                medicine.getAppointment(),
+                medicine.getPrice(),
+                key
+        });
     }
 
     @Override
     public void deleteMedicine(String name) {
-
+        JdbcTemplate delete = new JdbcTemplate(dataSource);
+        delete.update("DELETE FROM medecine WHERE name = ?",
+                new Object[] { name });
     }
 }

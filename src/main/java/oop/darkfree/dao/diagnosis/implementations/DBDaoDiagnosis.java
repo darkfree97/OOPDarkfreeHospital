@@ -39,8 +39,12 @@ public class DBDaoDiagnosis implements IDaoDiagnosis {
     @Override
     public void createDiagnosis(Diagnosis diagnosis) {
         JdbcTemplate insert = new JdbcTemplate(dataSource);
-        insert.update("INSERT INTO diagnoses (diagnosis, medicine, tackingMedicine, therapyPeriodByDays) VALUES(?,?,?,?)",
-                new Object[] { diagnosis.getDiagnosis(), diagnosis.getMedicine().getName(), diagnosis.getTakingMedicine(),diagnosis.getTherapyPeriodByDays() });
+        insert.update("INSERT INTO diagnoses (diagnosis, medicine, tackingMedicine, therapyPeriodByDays) VALUES(?,?,?,?)", new Object[] {
+                diagnosis.getDiagnosis(),
+                diagnosis.getMedicine().getName(),
+                diagnosis.getTakingMedicine(),
+                diagnosis.getTherapyPeriodByDays()
+        });
     }
 
     @Override

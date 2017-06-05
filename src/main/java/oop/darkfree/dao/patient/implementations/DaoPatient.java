@@ -45,8 +45,8 @@ public class DaoPatient implements IDaoPatient {
     }
 
     @Override
-    public void updatePatient(Patient patient) {
-        patients.stream().filter(p->p.getPerson().getId()==patient.getPerson().getId()).forEach(p->p = patient);
+    public void updatePatient(Integer key,Patient patient) {
+        patients.stream().filter(p->p.getPerson().getId()==key).forEach(p->p = patient);
     }
 
     @Override

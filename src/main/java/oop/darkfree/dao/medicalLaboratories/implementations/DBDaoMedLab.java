@@ -37,16 +37,31 @@ public class DBDaoMedLab implements IDaoMedLab{
 
     @Override
     public void createMedicalLab(MedicalLab medicalLab) {
-
+        JdbcTemplate insert = new JdbcTemplate(dataSource);
+        insert.update("INSERT INTO med_labs (med_lab_name, result_of_exm, extreme_point, price) VALUES(?,?,?,?)",new Object[] {
+                medicalLab.getLabName(),
+                medicalLab.getRes(),
+                medicalLab.getExtrPoint(),
+                medicalLab.getPrice()
+                });
     }
 
     @Override
     public void updateMedicalLab(String key, MedicalLab medicalLab) {
-
+        JdbcTemplate update = new JdbcTemplate(dataSource);
+        update.update("UPDATE med_labs SET med_lab_name = ?, result_of_exm = ?, extreme_point = ?, price = ? WHERE med_lab_name = ?",new Object[] {
+                medicalLab.getLabName(),
+                medicalLab.getRes(),
+                medicalLab.getExtrPoint(),
+                medicalLab.getPrice(),
+                key
+        });
     }
 
     @Override
     public void deleteMedicalLab(String name) {
-
+        JdbcTemplate delete = new JdbcTemplate(dataSource);
+        delete.update("DELETE FROM med_labs WHERE med_lab_name = ?",
+                new Object[] { name });
     }
 }

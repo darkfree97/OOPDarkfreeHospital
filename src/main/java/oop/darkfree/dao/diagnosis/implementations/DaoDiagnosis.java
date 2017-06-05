@@ -10,9 +10,10 @@ import java.util.List;
  * Created by Darkfree on 28.03.2017.
  */
 public class DaoDiagnosis implements IDaoDiagnosis {
-    List<Diagnosis> diagnosises = new ArrayList<>();
+    List<Diagnosis> diagnosises;
 
     public DaoDiagnosis() {
+        diagnosises = new ArrayList<>();
     }
 
     public DaoDiagnosis(List<Diagnosis> diagnosises) {
@@ -46,12 +47,17 @@ public class DaoDiagnosis implements IDaoDiagnosis {
     public void updateDiagnosis(String key, Diagnosis diagnosis) {
         diagnosises.forEach(p->{
             if(p.getDiagnosis().equals(key))
-                p = diagnosis;
+                temp = p;
         });
+        diagnosises.set(diagnosises.indexOf(temp),diagnosis);
     }
-
+    private static Diagnosis temp;
     @Override
     public void deleteDiagnosis(String name) {
-        diagnosises.stream().filter(p->p.getDiagnosis().equals(name)).forEach(p->diagnosises.remove(p));
+        diagnosises.forEach(p->{
+            if(p.getDiagnosis().intern().equals(name.intern()))
+               temp = p;
+        });
+        diagnosises.remove(temp);
     }
 }

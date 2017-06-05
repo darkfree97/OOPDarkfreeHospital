@@ -47,8 +47,8 @@ public class SPatient implements ISPatient {
     }
 
     @Override
-    public void updatePatient(Patient patient) {
-        patients.updatePatient(patient);
+    public void updatePatient(Integer key,Patient patient) {
+        patients.updatePatient(key, patient);
     }
 
     @Override

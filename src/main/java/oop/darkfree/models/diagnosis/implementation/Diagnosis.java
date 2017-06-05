@@ -3,13 +3,14 @@ package oop.darkfree.models.diagnosis.implementation;
 import oop.darkfree.models.diagnosis.interfaces.IDiagnosis;
 import oop.darkfree.models.medicine.interfaces.IMedicine;
 
+import java.io.Serializable;
 
 
 /**
  * Created by Darkfree on 12.03.2017.
  */
 
-public class Diagnosis implements IDiagnosis {
+public class Diagnosis implements IDiagnosis{
     String diagnosis;
     IMedicine medicine;
     String takingMedicine;
@@ -75,5 +76,15 @@ public class Diagnosis implements IDiagnosis {
                 "\n     therapyPeriodByDays - " + therapyPeriodByDays +
                 "\n     treatmentCost - " + this.medicine.getPrice() * this.therapyPeriodByDays +
                 '\n';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Diagnosis diagnosis1 = (Diagnosis) o;
+
+        return diagnosis.intern().equals(diagnosis1.diagnosis.intern());
     }
 }
