@@ -140,4 +140,32 @@ public class Examination implements IExamination {
     public Double getTotalCost() {
         return calculateTotalCost();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Examination that = (Examination) o;
+
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (patient != null ? !patient.equals(that.patient) : that.patient != null) return false;
+        if (doctors != null ? !doctors.equals(that.doctors) : that.doctors != null) return false;
+        if (diagnoses != null ? !diagnoses.equals(that.diagnoses) : that.diagnoses != null) return false;
+        if (medLabs != null ? !medLabs.equals(that.medLabs) : that.medLabs != null) return false;
+        if (totalCost != null ? !totalCost.equals(that.totalCost) : that.totalCost != null) return false;
+        return date != null ? date.equals(that.date) : that.date == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (patient != null ? patient.hashCode() : 0);
+        result = 31 * result + (doctors != null ? doctors.hashCode() : 0);
+        result = 31 * result + (diagnoses != null ? diagnoses.hashCode() : 0);
+        result = 31 * result + (medLabs != null ? medLabs.hashCode() : 0);
+        result = 31 * result + (totalCost != null ? totalCost.hashCode() : 0);
+        result = 31 * result + (date != null ? date.hashCode() : 0);
+        return result;
+    }
 }

@@ -15,10 +15,14 @@ public class DoctorResultSetExtractor implements ResultSetExtractor {
     @Override
     public Object extractData(ResultSet resultSet) throws SQLException, DataAccessException {
         Doctor doctor = new Doctor();
-        doctor.setPerson(new Person(resultSet.getInt(1),resultSet.getString(2),resultSet.getString(3),resultSet.getString(4)));
-        doctor.setProfession(resultSet.getString(5));
-        doctor.setExperience(resultSet.getInt(6));
-        doctor.setValueOfExam(resultSet.getDouble(7));
+        doctor.setPerson(new Person(
+                resultSet.getInt("id"),
+                resultSet.getString("d_surname"),
+                resultSet.getString("d_name"),
+                resultSet.getString("d_fathername")));
+        doctor.setProfession(resultSet.getString("profession"));
+        doctor.setExperience(resultSet.getInt("expiriense"));
+        doctor.setValueOfExam(resultSet.getDouble("value_of_exam"));
         return doctor;
     }
 }

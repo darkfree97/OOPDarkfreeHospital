@@ -159,9 +159,6 @@ public class SExamination implements ISExamination {
             doctorsToBonus.add(temp);
             doctors_copy.remove(temp);
         }
-        for (IDoctor doctor : doctorsToBonus){
-            System.out.println(doctor+" - "+doctorsProductivity.get(doctor));
-        }
         return doctorsToBonus;
     }
 
@@ -195,9 +192,6 @@ public class SExamination implements ISExamination {
             }
             lossesMedLabs.add(temp);
             medLabs_copy.remove(temp);
-        }
-        for (IMedicalLab medicalLab : lossesMedLabs){
-            System.out.println(medicalLab+" - "+lossesList.get(medicalLab));
         }
         return lossesMedLabs;
     }

@@ -52,6 +52,9 @@ body{
 .navbar-header{
     border-right-color: #4cae4c;
 }
+.navbar-brand{
+    height: 70px;
+}
 
 .nav>li>a{
     padding: 25px;
@@ -69,6 +72,8 @@ body{
     overflow-y: auto;
     position: relative;
     width: 50px;
+    position: relative;
+    top: -5px;
 }
 
 #logo_container{

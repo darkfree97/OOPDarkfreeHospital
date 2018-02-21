@@ -27,13 +27,13 @@ public class DBDaoDiagnosis implements IDaoDiagnosis {
     @Override
     public List<Diagnosis> getAll() {
         JdbcTemplate select = new JdbcTemplate(dataSource);
-        return select.query("SELECT * FROM diagnoses", new DiagnosisRowMapper(dataSource));
+        return select.query("SELECT * FROM diagnoses,medecine WHERE medecine.id=diagnoses.medicine_id", new DiagnosisRowMapper());
     }
 
     @Override
     public Diagnosis getDiagnosis(String name) {
         JdbcTemplate select = new JdbcTemplate(dataSource);
-        return ((List<Diagnosis>) select.query("SELECT * FROM diagnoses", new DiagnosisRowMapper(dataSource))).stream().filter(p->p.getDiagnosis().equals(name)).findFirst().get();
+        return ((List<Diagnosis>) select.query("SELECT * FROM diagnoses,medecine WHERE medecine.id=diagnoses.medicine_id", new DiagnosisRowMapper(), new Object[] {})).stream().filter(p->p.getDiagnosis().equals(name)).findFirst().get();
     }
 
     @Override

@@ -20,34 +20,33 @@ import java.util.List;
  */
 public class DBDaoExaminations implements IDaoExamination {
     private DataSource dataSource;
-    private DBDaoPatient patient;
-    private DBDaoDoctor doctor;
-    private DBDaoDiagnosis diagnosis;
-    private DBDaoMedLab medLab;
-    public void setDataSource(DataSource ds) {
-        dataSource = ds;
-    }
 
     public DBDaoExaminations() {
     }
 
     public DBDaoExaminations(DataSource dataSource) {
+
         this.dataSource = dataSource;
-        patient = new DBDaoPatient(dataSource);
-        doctor = new DBDaoDoctor(dataSource);
-        diagnosis = new DBDaoDiagnosis(dataSource);
-        medLab = new DBDaoMedLab(dataSource);
+    }
+
+    public void setDataSource(DataSource ds) {
+        dataSource = ds;
     }
 
     @Override
     public List<Examination> getAll() {
         JdbcTemplate select = new JdbcTemplate(dataSource);
-        return select.query("SELECT * FROM examinations", new ExaminationRowMapper(dataSource));
+        return select.query("SELECT * FROM examinations,doctors,patients,diagnoses,medecine,med_labs\n" +
+                "WHERE doctors.id=examinations.doctor_id\n" +
+                "AND patients.id=examinations.patient_id\n" +
+                "AND diagnoses.id=examinations.diagnosis_id\n" +
+                "AND medecine.id=diagnoses.medicine_id\n" +
+                "AND med_labs.id=examinations.med_lab_id", new ExaminationRowMapper());
     }
 
     @Override
     public Examination getExamination(int id) {
-        return null;
+        return getAll().stream().filter(p->p.getId().intValue()==id).findFirst().get();
     }
 
     @Override

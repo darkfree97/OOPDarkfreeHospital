@@ -10,15 +10,10 @@ import java.sql.SQLException;
  * Created by darkfree on 11.05.17.
  */
 public class ExaminationRowMapper implements RowMapper {
-    DataSource dataSource;
-
-    public ExaminationRowMapper(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }
 
     @Override
     public Object mapRow(ResultSet resultSet, int i) throws SQLException {
-        ExaminationsResultSetExtractor extractor = new ExaminationsResultSetExtractor(dataSource);
+        ExaminationsResultSetExtractor extractor = new ExaminationsResultSetExtractor();
         return extractor.extractData(resultSet);
     }
 }

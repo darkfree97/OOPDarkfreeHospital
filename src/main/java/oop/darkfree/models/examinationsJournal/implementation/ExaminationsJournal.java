@@ -27,13 +27,17 @@ import java.util.*;
 public class ExaminationsJournal implements IExaminationsJournal,IBusinessVersOfExmJournal {
     private List<IExamination> examinations;
     static private int doctorsIDs = 0;
-    static private int patientIDs = 0;
-    static private int examinationsIDs = 0;
+    static private int patientIDs;
+    static private int examinationsIDs;
     private List<IPatient> patients = new ArrayList<>();
     private List<IDoctor> doctors = new ArrayList<>();
     private List<IDiagnosis> diagnoses = new ArrayList<>();
     private List<IMedicine> medicines = new ArrayList<>();
     private List<IMedicalLab> medicalLabList = new ArrayList<>();
+
+    public int getExaminationsIDs() {
+        return examinationsIDs;
+    }
 
     public ExaminationsJournal() {
         examinations = new LinkedList<>();
@@ -41,6 +45,8 @@ public class ExaminationsJournal implements IExaminationsJournal,IBusinessVersOf
 
     public ExaminationsJournal(boolean debug) {
         if(debug){
+            patientIDs = 0;
+            examinationsIDs = 0;
             examinations = new LinkedList<>();
             doctors.clear();
             patients.clear();

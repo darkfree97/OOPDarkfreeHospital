@@ -16,11 +16,11 @@ public class PatientResultSetExtractor implements ResultSetExtractor {
     public Object extractData(ResultSet resultSet) throws SQLException, DataAccessException {
         Patient patient = new Patient();
         patient.setPerson(new Person());
-        patient.getPerson().setId(resultSet.getInt(1));
-        patient.getPerson().setSurname(resultSet.getString(2));
-        patient.getPerson().setName(resultSet.getString(3));
-        patient.getPerson().setFathername(resultSet.getString(4));
-        patient.setYear(resultSet.getInt(5));
+        patient.getPerson().setId(resultSet.getInt("id"));
+        patient.getPerson().setSurname(resultSet.getString("p_surname"));
+        patient.getPerson().setName(resultSet.getString("p_name"));
+        patient.getPerson().setFathername(resultSet.getString("p_fathername"));
+        patient.setYear(resultSet.getInt("year"));
         return patient;
     }
 }

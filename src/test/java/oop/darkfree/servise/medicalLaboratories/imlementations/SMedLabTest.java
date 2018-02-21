@@ -36,17 +36,25 @@ public class SMedLabTest {
 
     @Test
     public void getMedicalLab() throws Exception {
+        Assert.assertEquals("2",service.getMedicalLab("2").getLabName());
     }
 
     @Test
     public void createMedicalLab() throws Exception {
+        service.createMedicalLab(new MedicalLab("4","4", ExtremePoint.Low,0.0));
+        Assert.assertEquals("4",service.getMedicalLab("4").getLabName());
     }
 
     @Test
     public void updateMedicalLab() throws Exception {
+        service.updateMedicalLab("1",new MedicalLab("5","5", ExtremePoint.Low,0.0));
+        Assert.assertEquals("5",service.getMedicalLab("5").getLabName());
     }
 
     @Test
     public void deleteMedicalLab() throws Exception {
+        int size = service.getAll().size();
+        service.deleteMedicalLab("3");
+        Assert.assertEquals(true,size>service.getAll().size());
     }
 }

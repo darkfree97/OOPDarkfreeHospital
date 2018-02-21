@@ -11,30 +11,15 @@ import java.util.List;
  */
 public class DaoMedicine implements IDaoMedicine {
     List<Medicine> medicines = new ArrayList<>();
+    private static Medicine temp;
 
-    @Override
-    public List<Medicine> getAll() {
-        return medicines;
-    }
-
-    @Override
-    public Medicine getMedicine(String name) {
-        return medicines.stream().filter(p->p.getName().equals(name)).findFirst().get();
-    }
-
-    @Override
-    public void createMedicine(Medicine medicine) {
+    public DaoMedicine() {
 
     }
 
-    @Override
-    public void updateMedicine(String key, Medicine medicine) {
+    public DaoMedicine(List<Medicine> medicines) {
 
-    }
-
-    @Override
-    public void deleteMedicine(String name) {
-        medicines.stream().filter(p->p.getName().equals(name)).forEach(p->medicines.remove(p));
+        this.medicines = medicines;
     }
 
     public List<Medicine> getMedicines() {
@@ -45,12 +30,39 @@ public class DaoMedicine implements IDaoMedicine {
         this.medicines = medicines;
     }
 
-    public DaoMedicine() {
-
+    @Override
+    public List<Medicine> getAll() {
+        return medicines;
     }
 
-    public DaoMedicine(List<Medicine> medicines) {
+    @Override
+    public Medicine getMedicine(String name) {
 
-        this.medicines = medicines;
+        return medicines.stream().filter(p->p.getName().intern().equals(name.intern())).findFirst().get();
+    }
+
+    @Override
+    public void createMedicine(Medicine medicine) {
+        medicines.add(medicine);
+    }
+
+    @Override
+    public void updateMedicine(String key, Medicine medicine) {
+        temp = null;
+        medicines.forEach(p->{
+            if(p.getName().equals(key))
+                temp = p;
+        });
+        medicines.set(medicines.indexOf(temp),medicine);
+    }
+
+    @Override
+    public void deleteMedicine(String name) {
+        temp = null;
+        medicines.forEach(p->{
+            if(p.getName().equals(name))
+                temp = p;
+        });
+        medicines.remove(temp);
     }
 }
